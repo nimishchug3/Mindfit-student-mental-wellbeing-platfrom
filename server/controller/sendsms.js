@@ -2,11 +2,13 @@ const { Twilio } = require('twilio');
 
 require('dotenv').config();
 
-Twilio_SID = "";
-Twilio_AUTH = "";
 
+require('dotenv').config();
+const client = require('twilio')(
+  process.env.TWILIO_SID,
+  process.env.TWILIO_AUTH
+);
 
-const client = require('twilio')(Twilio_SID,Twilio_AUTH);
 
 
 const sendsms =  (async (body,sender_no) =>{

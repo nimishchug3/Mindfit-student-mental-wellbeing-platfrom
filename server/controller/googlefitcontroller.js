@@ -12,10 +12,11 @@ const axios = require("axios")
 
 
 const geturl = (req, res) => {
-  const oauth2client = new google.auth.OAuth2(
-    /* your google auth client id */ ,
-    "http://localhost:8000/"
-  )
+const oauth2client = new google.auth.OAuth2(
+  process.env.GOOGLE_CLIENT_ID,
+  process.env.GOOGLE_CLIENT_SECRET,
+  process.env.GOOGLE_REDIRECT_URI
+);
 
   const scope = ["https://www.googleapis.com/auth/fitness.activity.read profile email openid"]
   const url = oauth2client.generateAuthUrl({
@@ -37,10 +38,11 @@ const geturl = (req, res) => {
 const getdata=  async (req, res) => {
   const parsedUrl = url.parse(req.url)
   const code = querystring.parse(parsedUrl.query).code
-  const oauth2client = new google.auth.OAuth2(
-    /*your client id*/ ,
-    "http://localhost:8000/"
-  )
+const oauth2client = new google.auth.OAuth2(
+  process.env.GOOGLE_CLIENT_ID,
+  process.env.GOOGLE_CLIENT_SECRET,
+  process.env.GOOGLE_REDIRECT_URI
+);
   const tokens = await oauth2client.getToken(code);
   console.log(tokens);
   res.send("hello");

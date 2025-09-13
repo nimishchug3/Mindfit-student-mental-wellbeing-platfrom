@@ -3,9 +3,9 @@ const {geturl,getdata} = require("../controller/googlefitcontroller");
 const { authMiddleware } = require("../middleware/userMiddleware");
 const router = express.Router();
 
-router.get("/geturl", authMiddleware, geturl);
+router.get("/geturl", geturl);
 
-router.get("/getdata", authMiddleware, getdata);
+router.get("/getdata", getdata);
 
 
 module.exports = router;
