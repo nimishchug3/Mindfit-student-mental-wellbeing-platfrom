@@ -111,9 +111,13 @@ Follow these steps to set up the project locally:
 ![Signup Page](Images/signup.png)
 
 ### 🏠 Home Page
-![Home Page](Images/home.png)
+![Home Page](Images/Home.png)
 
 ---
+
+## 🎥 Detailed Implementation Video
+
+- [Watch the Video](https://www.youtube.com/watch?v=Js_Fh6Ej1gQ&ab_channel=PankajPawar)
 
 ## 🧠 Authors
 
